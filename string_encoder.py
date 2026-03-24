@@ -18,8 +18,8 @@ def encode_in_permutation(sequence, message):
     
     # Check for repeated symbols
     if len(set(sequence)) != len(sequence):
-        print("ERROR: sequence contains repeated symbols!")
-        return ""
+        print("ERROR: sequence contains repeated elements")
+        raise(ValueError)
     
     # Transorm the string into a number
     index = string_to_num(message)
@@ -27,7 +27,7 @@ def encode_in_permutation(sequence, message):
     # Check if the number is representable with the amount of elements in the sequence
     if index > factorial(len(sequence)+1):
         print("ERROR: sequence not long enought for amount of information")
-        return ""
+        raise(IndexError)
     
     permutated_sequence = encode(sequence, index)
     return permutated_sequence
@@ -36,7 +36,10 @@ def decode_from_permutation(permutated_sequence, original_sequence):
     "Decodes secret message from the permutation of a sequence of DISTINCT elements given original order"
 
     # Calculate the lehmer code of the permutates sequence
-    lehmer_code = get_lehmer_code(permutated_sequence, original_sequence)
+    try:
+        lehmer_code = get_lehmer_code(permutated_sequence, original_sequence)
+    except:
+        raise(ValueError)
 
     # Get the index of the permutation from the lehmer code and convert it into a string
     index = fact_to_dec(lehmer_code)

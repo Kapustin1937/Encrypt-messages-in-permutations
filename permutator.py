@@ -4,7 +4,10 @@ from math import factorial
 string = list("12345678")
 
 def Permutate_with_lehmer(sequence, lehmer_code_prev):
-    "Permutates a list using its lehmer code" 
+    """
+    Permutates a list using its lehmer code
+    """
+
     lehmer_code = ([0]*(len(sequence)-len(lehmer_code_prev)))
     lehmer_code.extend(lehmer_code_prev)
     encoded = [""]*len(sequence)
@@ -33,7 +36,7 @@ def get_index(sequence, order):
 
 def get_lehmer_code(permutated_sequence, original_sequence):
     "Returns the Lehmer Code of a permutated sequence given original order"
-    
+
     if original_sequence == []:
         original_sequence = [i for i in range(len(permutated_sequence))]
 
