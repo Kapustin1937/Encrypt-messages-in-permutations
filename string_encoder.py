@@ -24,8 +24,6 @@ def encode_in_permutation(sequence, message):
     # Transorm the string into a number
     index = string_to_num(message)
 
-    # print(f"index: {index}, factorial: {factorial(len(sequence)+1)}, factoradic: {dec_to_fact(index)}")
-
     # Check if the number is representable with the amount of elements in the sequence
     if index > factorial(len(sequence)+1):
         print("ERROR: sequence not long enought for amount of information")
@@ -40,13 +38,10 @@ def decode_from_permutation(permutated_sequence, original_sequence):
     # Calculate the lehmer code of the permutates sequence
     lehmer_code = get_lehmer_code(permutated_sequence, original_sequence)
 
-    # print(f"lehmer code: {lehmer_code}")
-    # print(f"lehmered: {Permutate_with_lehmer(original_sequence, lehmer_code)}")
-
     # Get the index of the permutation from the lehmer code and convert it into a string
     index = fact_to_dec(lehmer_code)
-    # print(f"index:{index}")
     message = num_to_string(index)
+
     return message
 
 def test2():
