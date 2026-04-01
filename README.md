@@ -1,3 +1,11 @@
+### Encode Messages in order of deck of cards!
+run
+```
+python UI_Deck_Shuffle_Encoding.py
+```
+to use the program. \
+There's also a version with permutations of a sequence of characters. \
+below there's a pretty brief explanation of they both work.
 ### Encode messages in permutations of elements
 A sequence of n elements has n! permutations \
 We can assign every permutation a specific index using a [Lehmer Code](https://en.wikipedia.org/wiki/Lehmer_code)\
