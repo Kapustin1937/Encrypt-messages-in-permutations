@@ -1,3 +1,7 @@
+"""
+Contains functions to convert into and from the factoradic number system
+"""
+
 def dec_to_fact(number: int):
     """
     Takes a number in decimal base and returns a list with its factoradic representation

@@ -1,3 +1,7 @@
+"""
+Contains the functions to encode strings in permutations of lists or strings
+"""
+
 from factoradic_converter import *
 from permutator import *
 
@@ -18,16 +22,14 @@ def encode_in_permutation(sequence, message):
     
     # Check for repeated symbols
     if len(set(sequence)) != len(sequence):
-        print("ERROR: sequence contains repeated elements")
-        raise(ValueError)
+        raise(ValueError("Sequence contains repeated elements"))
     
     # Transorm the string into a number
     index = string_to_num(message)
 
     # Check if the number is representable with the amount of elements in the sequence
     if index > factorial(len(sequence)+1):
-        print("ERROR: sequence not long enought for amount of information")
-        raise(IndexError)
+        raise(IndexError("Sequence not long enought for amount of information"))
     
     permutated_sequence = encode(sequence, index)
     return permutated_sequence
@@ -48,9 +50,9 @@ def decode_from_permutation(permutated_sequence, original_sequence):
     return message
 
 def test2():
-    s = "qwertyuiop"
+    s = [str(i) for i in range(10)]
     message = input("introduce secret message: ")
-    encoded = "".join(encode_in_permutation("qwertyuiop", "hii"))
+    encoded = "".join(encode_in_permutation([str(i) for i in range(10)], message))
     print(f"permutated sequence: {encoded}")
     decoded = "".join(decode_from_permutation(encoded, s))
     print(f"decoded: {decoded}")

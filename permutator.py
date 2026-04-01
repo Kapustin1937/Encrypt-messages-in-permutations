@@ -1,3 +1,7 @@
+"""
+Contains functions for working with permutations and lehmer codes
+"""
+
 from factoradic_converter import *
 from math import factorial
 
@@ -24,11 +28,8 @@ def encode(sequence, index):
     return Permutate_with_lehmer(sequence, lehmer_code)
 
 def decode(sequence, index):
-    "Permutates a list using the index of the permutation"
+    "Permutates an encoded list using the index of the permutation and returns the original order"
     # Figure out how to actually do this!!!
-    #fact = factorial(len(sequence))
-    #decode_index = (fact - index) % (fact - 1)
-    #return encode(sequence, decode_index)
 
 def get_index(sequence, order):
     "Returns the index of a permutated sequence given original order"
