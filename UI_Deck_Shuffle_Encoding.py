@@ -75,7 +75,7 @@ def update_decoder_text(event = ""):
         text_decode.insert("1.0", "Inserted deck order is incomplete or invalid")
 
 root = tkinter.Tk()
-root.geometry("900x600")
+root.geometry("1000x650")
 root.title("Deck Shuffle Encoder")
 deck = Deck()
 
